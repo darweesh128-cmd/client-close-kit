@@ -4,7 +4,7 @@
 
 | | |
 |---|---|
-| **Price** | **$5 USD** one-time |
+| **Price** | **$5** or **$1** USD one-time |
 | **Buy** | [PayPal.me / MohammedAldarwesh / 5](https://www.paypal.com/paypalme/MohammedAldarwesh/5) — note `CLIENT-CLOSE-KIT` |
 | **Sell page** | https://darweesh128-cmd.github.io/client-close-kit/ |
 | **Mirror** | https://darweesh128-cmd.github.io/earn-1-today/ |
@@ -23,6 +23,8 @@ Freelancers who negotiate on WhatsApp with mixed Arabic/English buyers and need 
 - `QUICKSTART.md`
 
 Free 3-caption preview on the sell page: `sample-captions.csv`.
+
+Free browser invoice tool: https://darweesh128-cmd.github.io/client-close-kit/invoice-generator.html
 
 ## License / use
 Personal and commercial use of the templates in your own client work. Do not resell the pack as-is.
