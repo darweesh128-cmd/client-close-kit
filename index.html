@@ -81,9 +81,23 @@
     summary{cursor:pointer;font-weight:600}
     footer{margin-top:2rem;color:var(--muted);font-size:.85rem}
     a{color:var(--brand2)}
+
+    .sticky-cta{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#0070ba;color:#fff;box-shadow:0 -6px 24px rgba(15,23,42,.18);padding:.7rem 1rem}
+    .sticky-cta .inner{max-width:760px;margin:0 auto;display:flex;flex-wrap:wrap;gap:.55rem;align-items:center;justify-content:space-between}
+    .sticky-cta p{margin:0;font-size:.92rem;font-weight:600}
+    .sticky-cta .btn{padding:.65rem 1rem;font-size:.95rem}
+    .sticky-cta .btn-light{background:#fff;color:#0070ba}
+    .sticky-cta .btn-outline{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.7)}
+    body{padding-bottom:4.75rem}
+    .support-card{border:2px solid #0070ba;background:linear-gradient(180deg,#fff 0%,#eff6ff 100%)}
+    .support-card h2{color:#0070ba}
+    .top-strip{background:#0f766e;color:#fff;padding:.55rem 1rem;text-align:center;font-size:.95rem;font-weight:600}
+    .top-strip a{color:#fff;text-decoration:underline}
+    .btn-paypal-lg{font-size:1.08rem;padding:1rem 1.4rem;box-shadow:0 8px 20px rgba(0,112,186,.28)}
   </style>
 </head>
 <body>
+<div class="top-strip">Support / unlock tip: PayPal.me <a href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" target="_blank" rel="noopener">$1 → @MohammedAldarwesh</a> · note <code style="background:rgba(255,255,255,.2);padding:.05rem .35rem;border-radius:4px">CLIENT-CLOSE-KIT</code></div>
   <div class="wrap">
     <header>
       <span class="badge">Instant digital download</span>
@@ -98,10 +112,11 @@
       <p style="margin:.55rem 0 0">Pay via personal PayPal to <strong>@MohammedAldarwesh</strong> — no buyer account signup beyond PayPal itself. Unlock the ZIP on this page right after.</p>
       <div class="note"><strong>Before you pay:</strong> in the PayPal note / message field write <code>CLIENT-CLOSE-KIT</code> so the payment is easy to match.</div>
       <div class="row">
-        <a class="btn btn-paypal" id="payBtn" href="https://www.paypal.com/paypalme/MohammedAldarwesh/5" target="_blank" rel="noopener">Pay $5 with PayPal.me</a>
-        <a class="btn btn-ghost" id="payBtn1" href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" target="_blank" rel="noopener">Pay $1 (starter)</a>
+        <a class="btn btn-paypal btn-paypal-lg" id="payBtn1" href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" target="_blank" rel="noopener">Support / unlock — Pay $1 (PayPal.me)</a>
+        <a class="btn btn-ghost" id="payBtn" href="https://www.paypal.com/paypalme/MohammedAldarwesh/5" target="_blank" rel="noopener">Pay $5 (full tip)</a>
         <button class="btn btn-brand" type="button" id="paidBtn">I've paid — unlock download</button>
       </div>
+      <p class="muted" style="margin-top:.65rem"><strong>English path:</strong> open PayPal.me → send <strong>$1</strong> to <strong>@MohammedAldarwesh</strong> → put note <code>CLIENT-CLOSE-KIT</code> → return here and unlock. Same ZIP as $5.</p>
       <div id="unlock">
         <p><strong>Thanks for supporting independent digital goods.</strong> Your pack:</p>
         <p><a class="btn btn-brand" href="client-close-kit-v1.zip" download>Download Client Close Kit v1 (ZIP)</a></p>
@@ -135,6 +150,22 @@
         <li><a href="work-order.html"><strong>Work order / job ticket</strong></a> — WO number, client, job site, scope, tasks with qty/rate, dates, materials, signatures; print or save as PDF (template only)</li>
       </ul>
       <p class="muted" style="margin-top:.6rem">The full kit adds 40 bilingual WhatsApp captions + follow-up sequence.</p>
+    </div>
+
+
+    <div class="card support-card" id="support">
+      <h2>Support / unlock tip (English)</h2>
+      <p style="margin:.2rem 0 .6rem">If the free tools helped, tip <strong>$1</strong> (or $5) via PayPal.me — that unlocks the full Client Close Kit ZIP on this page. No account signup beyond PayPal.</p>
+      <ol style="margin:.2rem 0 .8rem;padding-left:1.2rem">
+        <li>Click <strong>Support / unlock — Pay $1</strong> (opens PayPal.me/@MohammedAldarwesh/1).</li>
+        <li>In the PayPal note field write <code>CLIENT-CLOSE-KIT</code>.</li>
+        <li>Come back and press <em>I've paid — unlock download</em>.</li>
+      </ol>
+      <div class="row">
+        <a class="btn btn-paypal btn-paypal-lg" href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" target="_blank" rel="noopener">PayPal.me $1 tip</a>
+        <a class="btn btn-ghost" href="https://www.paypal.com/paypalme/MohammedAldarwesh/5" target="_blank" rel="noopener">PayPal.me $5</a>
+      </div>
+      <p class="muted" style="margin-top:.75rem">Direct link: <a href="https://paypal.me/MohammedAldarwesh/1">paypal.me/MohammedAldarwesh/1</a></p>
     </div>
 
     <div class="card">
@@ -229,5 +260,16 @@
       if(payBtn1) payBtn1.addEventListener('click', arm);
     })();
   </script>
+
+<div class="sticky-cta" role="region" aria-label="PayPal support tip">
+  <div class="inner">
+    <p>Support / unlock tip — $1 via PayPal.me @MohammedAldarwesh</p>
+    <div style="display:flex;flex-wrap:wrap;gap:.55rem">
+      <a class="btn btn-light" href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" target="_blank" rel="noopener">Pay $1 now</a>
+      <a class="btn btn-outline" href="#support">How it works</a>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
