@@ -54,3 +54,4 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free work order / job ticket generator: https://darweesh128-cmd.github.io/client-close-kit/work-order.html
 
 - Free delivery note / packing slip generator: https://darweesh128-cmd.github.io/client-close-kit/delivery-note.html
+- Free client feedback / satisfaction form: https://darweesh128-cmd.github.io/client-close-kit/client-feedback-form.html
