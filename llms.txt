@@ -16,3 +16,4 @@
 - Free change order / scope change form: https://darweesh128-cmd.github.io/client-close-kit/change-order-form.html
 - Free milestone payment schedule: https://darweesh128-cmd.github.io/client-close-kit/milestone-payment-schedule.html
 - Free weekly status report: https://darweesh128-cmd.github.io/client-close-kit/weekly-status-report.html
+- Free NDA / confidentiality outline: https://darweesh128-cmd.github.io/client-close-kit/nda-outline.html
