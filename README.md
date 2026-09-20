@@ -58,3 +58,4 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free meeting call notes / action tracker: https://darweesh128-cmd.github.io/client-close-kit/meeting-call-notes.html
 - Free project brief generator: https://darweesh128-cmd.github.io/client-close-kit/project-brief.html
 - Free late fee / interest calculator: https://darweesh128-cmd.github.io/client-close-kit/late-fee-calculator.html
+- Free client / project intake form: https://darweesh128-cmd.github.io/client-close-kit/client-intake-form.html
