@@ -32,3 +32,5 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free SOW: https://darweesh128-cmd.github.io/client-close-kit/scope-of-work.html
 
 - Free proposal / cover letter: https://darweesh128-cmd.github.io/client-close-kit/proposal-outline.html
+
+- Free client onboarding checklist: https://darweesh128-cmd.github.io/client-close-kit/client-onboarding-checklist.html
