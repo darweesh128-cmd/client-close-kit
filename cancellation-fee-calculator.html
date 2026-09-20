@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Free Cancellation / Kill-Fee Calculator for Freelancers | Client Close Kit</title>
+  <meta name="description" content="Estimate a fair project cancellation or kill fee from deposit, hours worked, and remaining value. Free browser tool — no signup."/>
+  <link rel="canonical" href="https://darweesh128-cmd.github.io/client-close-kit/cancellation-fee-calculator.html"/>
+  <style>
+    :root{--bg:#f1f5f9;--ink:#0f172a;--muted:#64748b;--card:#fff;--line:#e2e8f0;--brand:#0f766e}
+    *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+    .wrap{max-width:640px;margin:0 auto;padding:1.25rem}
+    h1{font-size:1.45rem;margin:0 0 .35rem}p.lead{color:var(--muted);margin:0 0 1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem}
+    label{display:block;font-size:.85rem;font-weight:600;margin:.65rem 0 .25rem}
+    input,select{width:100%;padding:.55rem .65rem;border:1px solid var(--line);border-radius:8px;font-size:1rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .out{font-size:1.05rem;margin:.4rem 0}.out strong{color:var(--brand)}
+    a.back{color:var(--brand);text-decoration:none;font-size:.9rem}
+    .tip{font-size:.85rem;color:var(--muted);margin-top:.75rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./">← Client Close Kit</a>
+    <h1>Cancellation / kill-fee calculator</h1>
+    <p class="lead">When a client cancels mid-project, estimate a fair fee from deposit kept, hours already worked, and a kill-fee percent of remaining value. Runs in your browser — nothing is uploaded.</p>
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="total">Agreed project total</label>
+          <input id="total" type="number" min="0" step="0.01" value="3000"/>
+        </div>
+        <div>
+          <label for="currency">Currency label</label>
+          <input id="currency" type="text" value="USD" maxlength="6"/>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="deposit">Deposit already paid</label>
+          <input id="deposit" type="number" min="0" step="0.01" value="900"/>
+        </div>
+        <div>
+          <label for="hours">Hours already worked</label>
+          <input id="hours" type="number" min="0" step="0.25" value="12"/>
+        </div>
+      </div>
+      <div class="row">
+        <div>
+          <label for="rate">Your hourly rate</label>
+          <input id="rate" type="number" min="0" step="0.01" value="75"/>
+        </div>
+        <div>
+          <label for="kill">Kill-fee % of remaining value</label>
+          <input id="kill" type="number" min="0" max="100" step="1" value="25"/>
+        </div>
+      </div>
+      <div id="result" style="margin-top:1rem"></div>
+      <p class="tip">Tip: put the kill-fee percent in your contract before work starts. Common ranges are 15–40% of unfinished value, plus hours already delivered.</p>
+    </div>
+    <p class="tip">More free tools: <a href="./change-order-form.html">change order</a> · <a href="./deposit-calculator.html">deposit calculator</a> · <a href="./">full kit</a>. Support: <a href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" rel="noopener" target="_blank">PayPal.me $1</a></p>
+  </div>
+  <script>
+    function money(n,c){return (isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+' '+c}
+    function calc(){
+      const total=+document.getElementById('total').value||0;
+      const deposit=+document.getElementById('deposit').value||0;
+      const hours=+document.getElementById('hours').value||0;
+      const rate=+document.getElementById('rate').value||0;
+      const killPct=Math.min(100,Math.max(0,+document.getElementById('kill').value||0));
+      const c=(document.getElementById('currency').value||'USD').trim()||'USD';
+      const worked=hours*rate;
+      const remaining=Math.max(0,total-worked);
+      const kill=remaining*(killPct/100);
+      const suggested=worked+kill;
+      const dueFromClient=Math.max(0,suggested-deposit);
+      const refundToClient=Math.max(0,deposit-suggested);
+      let html='<div class="out">Value of hours worked: <strong>'+money(worked,c)+'</strong></div>';
+      html+='<div class="out">Remaining project value: <strong>'+money(remaining,c)+'</strong></div>';
+      html+='<div class="out">Kill fee ('+killPct+'%): <strong>'+money(kill,c)+'</strong></div>';
+      html+='<div class="out">Suggested cancellation total: <strong>'+money(suggested,c)+'</strong></div>';
+      if(dueFromClient>0){
+        html+='<div class="out">Still due from client (after deposit): <strong>'+money(dueFromClient,c)+'</strong></div>';
+      }else{
+        html+='<div class="out">Refund to client (deposit exceeds fee): <strong>'+money(refundToClient,c)+'</strong></div>';
+      }
+      document.getElementById('result').innerHTML=html;
+    }
+    ['total','deposit','hours','rate','kill','currency'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+    calc();
+  </script>
+</body>
+</html>
