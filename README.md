@@ -36,3 +36,4 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free client onboarding checklist: https://darweesh128-cmd.github.io/client-close-kit/client-onboarding-checklist.html
 - Free timesheet / time tracker: https://darweesh128-cmd.github.io/client-close-kit/timesheet.html
 - Free expense / receipt log: https://darweesh128-cmd.github.io/client-close-kit/expense-log.html
+- Free change order / scope change form: https://darweesh128-cmd.github.io/client-close-kit/change-order-form.html
