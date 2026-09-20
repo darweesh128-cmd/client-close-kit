@@ -38,3 +38,4 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free expense / receipt log: https://darweesh128-cmd.github.io/client-close-kit/expense-log.html
 - Free change order / scope change form: https://darweesh128-cmd.github.io/client-close-kit/change-order-form.html
 - Free milestone payment schedule: https://darweesh128-cmd.github.io/client-close-kit/milestone-payment-schedule.html
+- Free weekly status report: https://darweesh128-cmd.github.io/client-close-kit/weekly-status-report.html
