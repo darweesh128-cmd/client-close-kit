@@ -12,3 +12,4 @@
 - Free proposal / cover letter outline: https://darweesh128-cmd.github.io/client-close-kit/proposal-outline.html
 - Free client onboarding checklist: https://darweesh128-cmd.github.io/client-close-kit/client-onboarding-checklist.html
 - Free freelance timesheet / time tracker: https://darweesh128-cmd.github.io/client-close-kit/timesheet.html
+- Free freelance expense / receipt log: https://darweesh128-cmd.github.io/client-close-kit/expense-log.html
