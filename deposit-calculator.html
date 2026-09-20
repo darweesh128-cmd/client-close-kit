@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Free Deposit Calculator for Freelancers | Client Close Kit</title>
+  <meta name="description" content="Calculate project deposit, balance due, and suggested milestone splits. Free browser tool — no signup."/>
+  <link rel="canonical" href="https://darweesh128-cmd.github.io/client-close-kit/deposit-calculator.html"/>
+  <style>
+    :root{--bg:#f1f5f9;--ink:#0f172a;--muted:#64748b;--card:#fff;--line:#e2e8f0;--brand:#0f766e}
+    *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5}
+    .wrap{max-width:640px;margin:0 auto;padding:1.25rem}
+    h1{font-size:1.45rem;margin:0 0 .35rem}p.lead{color:var(--muted);margin:0 0 1rem}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;margin-bottom:1rem}
+    label{display:block;font-size:.85rem;font-weight:600;margin:.65rem 0 .25rem}
+    input,select{width:100%;padding:.55rem .65rem;border:1px solid var(--line);border-radius:8px;font-size:1rem}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .out{font-size:1.05rem;margin:.4rem 0}.out strong{color:var(--brand)}
+    a.back{color:var(--brand);text-decoration:none;font-size:.9rem}
+    .tip{font-size:.85rem;color:var(--muted);margin-top:.75rem}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="back" href="./">← Client Close Kit</a>
+    <h1>Deposit &amp; milestone calculator</h1>
+    <p class="lead">Pick a project total and deposit percent. See balance due and optional 2–4 milestone splits. Runs in your browser — nothing is uploaded.</p>
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="total">Project total</label>
+          <input id="total" type="number" min="0" step="0.01" value="2000"/>
+        </div>
+        <div>
+          <label for="currency">Currency label</label>
+          <input id="currency" type="text" value="USD" maxlength="6"/>
+        </div>
+      </div>
+      <label for="pct">Deposit %</label>
+      <input id="pct" type="number" min="0" max="100" step="1" value="40"/>
+      <label for="parts">Milestone count (after deposit)</label>
+      <select id="parts">
+        <option value="1">1 balance payment</option>
+        <option value="2" selected>2 milestones</option>
+        <option value="3">3 milestones</option>
+        <option value="4">4 milestones</option>
+      </select>
+      <div id="result" style="margin-top:1rem"></div>
+      <p class="tip">Tip: many freelancers use 30–50% upfront before work starts. Adjust to your risk and cash flow.</p>
+    </div>
+    <p class="tip">More free tools: <a href="./invoice-generator.html">invoice</a> · <a href="./milestone-payment-schedule.html">milestone schedule</a> · <a href="./">full kit</a>. Support: <a href="https://www.paypal.com/paypalme/MohammedAldarwesh/1" rel="noopener" target="_blank">PayPal.me $1</a></p>
+  </div>
+  <script>
+    function money(n,c){return (isFinite(n)?n:0).toLocaleString(undefined,{minimumFractionDigits:2,maximumFractionDigits:2})+' '+c}
+    function calc(){
+      const total=+document.getElementById('total').value||0;
+      const pct=Math.min(100,Math.max(0,+document.getElementById('pct').value||0));
+      const parts=+document.getElementById('parts').value||1;
+      const c=(document.getElementById('currency').value||'USD').trim()||'USD';
+      const deposit=total*(pct/100);
+      const balance=Math.max(0,total-deposit);
+      const each=parts>0?balance/parts:balance;
+      let html='<div class="out">Deposit ('+pct+'%): <strong>'+money(deposit,c)+'</strong></div>';
+      html+='<div class="out">Balance due: <strong>'+money(balance,c)+'</strong></div>';
+      if(parts===1){
+        html+='<div class="out">Final payment: <strong>'+money(balance,c)+'</strong></div>';
+      }else{
+        for(let i=1;i<=parts;i++){
+          html+='<div class="out">Milestone '+i+': <strong>'+money(each,c)+'</strong></div>';
+        }
+      }
+      html+='<div class="out">Check total: <strong>'+money(deposit+each*parts,c)+'</strong></div>';
+      document.getElementById('result').innerHTML=html;
+    }
+    ['total','pct','parts','currency'].forEach(id=>document.getElementById(id).addEventListener('input',calc));
+    document.getElementById('parts').addEventListener('change',calc);
+    calc();
+  </script>
+</body>
+</html>

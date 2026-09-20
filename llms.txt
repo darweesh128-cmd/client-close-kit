@@ -31,3 +31,4 @@
 - Free late fee / interest calculator for overdue invoices: https://darweesh128-cmd.github.io/client-close-kit/late-fee-calculator.html
 - Free freelance client / project intake form: https://darweesh128-cmd.github.io/client-close-kit/client-intake-form.html
 - Free freelance project kickoff email generator: https://darweesh128-cmd.github.io/client-close-kit/kickoff-email.html
+- [Deposit calculator](https://darweesh128-cmd.github.io/client-close-kit/deposit-calculator.html) — upfront % and milestone splits
