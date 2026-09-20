@@ -44,3 +44,5 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free statement of account / outstanding balance: https://darweesh128-cmd.github.io/client-close-kit/statement-of-account.html
 
 - Free credit note / invoice adjustment generator: https://darweesh128-cmd.github.io/client-close-kit/credit-note.html
+
+- Free certificate of completion / final delivery acceptance: https://darweesh128-cmd.github.io/client-close-kit/certificate-of-completion.html
