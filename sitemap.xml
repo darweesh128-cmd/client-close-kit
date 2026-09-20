@@ -33,4 +33,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://darweesh128-cmd.github.io/client-close-kit/hourly-vs-fixed-price-calculator.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

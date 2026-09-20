@@ -61,3 +61,4 @@ Personal and commercial use of the templates in your own client work. Do not res
 - Free client / project intake form: https://darweesh128-cmd.github.io/client-close-kit/client-intake-form.html
 - Free project kickoff email generator: https://darweesh128-cmd.github.io/client-close-kit/kickoff-email.html
 - [Deposit calculator](https://darweesh128-cmd.github.io/client-close-kit/deposit-calculator.html) — upfront % and milestone splits
+- [Hourly vs fixed-price calculator](https://darweesh128-cmd.github.io/client-close-kit/hourly-vs-fixed-price-calculator.html) — compare models, break-even hours, effective rate
